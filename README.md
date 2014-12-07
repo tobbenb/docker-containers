@@ -1,4 +1,4 @@
 tvheadend-unstable
 ==================
 
-Docker container tvheadend unstable build
+Docker container for tvheadend unstable build.
