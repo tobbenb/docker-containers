@@ -16,8 +16,7 @@ CMD ["/sbin/my_init"]
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody
 
-RUN apt-get install -qy curl && \
-    curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add - && \
+RUN curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add - && \
     apt-add-repository http://apt.tvheadend.org/unstable && \
     apt-get update -qq && \
     echo "tvheadend tvheadend/admin_username select admin" | /usr/bin/debconf-set-selections && \
@@ -25,12 +24,12 @@ RUN apt-get install -qy curl && \
     apt-get install -qy tvheadend
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 EXPOSE 9981 9982
 
-VOLUME /config
-VOLUME /recordings
+VOLUME /config \
+       /recordings
 
 #Start tvheadend when container starts
 RUN mkdir -p /etc/my_init.d
