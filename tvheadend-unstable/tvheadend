@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/tvheadend -u nobody -g users -c /config
+exec /usr/bin/tvheadend -u nobody -g users -c /config
