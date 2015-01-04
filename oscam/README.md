@@ -1,1 +1,1 @@
-Docker container for Oscam
+Docker container for Oscam-svn
