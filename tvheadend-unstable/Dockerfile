@@ -8,7 +8,6 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 # Set correct environment variables.
 ENV HOME /root
 
-
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
@@ -32,6 +31,6 @@ VOLUME /config \
        /recordings
 
 #Start tvheadend when container starts
-RUN mkdir -p /etc/my_init.d
-ADD tvheadend /etc/my_init.d/tvheadend
-RUN chmod +x /etc/my_init.d/tvheadend
+RUN mkdir -p /etc/service/tvheadend
+ADD tvheadend /etc/tvheadend/run
+RUN chmod +x /etc/tvheadend/run
