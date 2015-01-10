@@ -14,13 +14,14 @@ CMD ["/sbin/my_init"]
 #Change uid & gid to match Unraid
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody && \
+	usermod -g 20 nobody && \
     usermod -d /home nobody && \
     chown -R nobody:users /home
 
 RUN apt-add-repository "deb http://ppa.launchpad.net/oscam/ppa/ubuntu trusty main" && \
     gpg --keyserver keyserver.ubuntu.com --recv-keys 651987A2BDBE1D1E && gpg --export --armor 651987A2BDBE1D1E | apt-key add - && \
     apt-get update -qq && \
-    apt-get install -qy oscam-svn
+    apt-get install -qy oscam-svn usbutils
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
@@ -29,6 +30,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ADD oscam.sh /etc/service/oscam/run
 RUN chmod +x /etc/service/oscam/run
 
-EXPOSE 8888 10000 10001 10002 10003 10004 10005 10006 10007 10008 10009 10010
+EXPOSE 8888
 
 VOLUME /config
