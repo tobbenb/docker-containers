@@ -14,7 +14,8 @@ CMD ["/sbin/my_init"]
 #Change uid & gid to match Unraid
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody && \
-	usermod -g 20 nobody && \
+	addgroup --gid 16 creader && \
+	usermod -g 16 nobody && \
     usermod -d /home nobody && \
     chown -R nobody:users /home
 
