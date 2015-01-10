@@ -15,12 +15,12 @@ CMD ["/sbin/my_init"]
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody
 
-RUN curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add - && \
-    apt-add-repository http://apt.tvheadend.org/unstable && \
-    apt-get update -qq && \
-    echo "tvheadend tvheadend/admin_username select admin" | /usr/bin/debconf-set-selections && \
-    echo "tvheadend tvheadend/admin_password select password" | /usr/bin/debconf-set-selections && \
-    apt-get install -qy tvheadend
+# Install dependencies, build and install tvheadend
+RUN apt-get update -qq && \
+apt-get install -qy build-essential pkg-config libssl-dev git bzip2 wget libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python liburiparser1 liburiparser-dev \
+libhdhomerun-dev && \
+cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && git checkout f5c8e4ce && ./configure --enable-libffmpeg_static && make && make install && \
+rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
@@ -28,7 +28,12 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 EXPOSE 9981 9982
 
 VOLUME /config \
-       /recordings
+       /recordings \
+	   /data
+
+# Add tv_grab_wg to /usr/bin/
+ADD tv_grab_wg /usr/bin/
+RUN chmod +x /usr/bin/tv_grab_wg
 
 #Start tvheadend when container starts
 RUN mkdir -p /etc/service/tvheadend
