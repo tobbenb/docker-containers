@@ -1,7 +1,7 @@
 tvheadend-unstable
 ==================
 
-Docker container for tvheadend unstable build. This is work in progress and it might change or disappear without notice. It was created for use with Unraid v6 and tvheadend is running as nobody/users so the permissions for written files are correct.
+Docker container for tvheadend unstable build. This is work in progress and it might change or disappear without notice. It was created for use with Unraid v6. Tvheadend is running as nobody/users so the permissions for written files are correct.
 
 To run this docker use this command:
 
@@ -11,4 +11,8 @@ If you use IPTV or other IP based reception you have to add the ports to the sta
 
 If you do not know which ports to passthrough you can add –net=“host” after -d and remove all port passthrough -p 1234:1234
 
-I have not tested if it works to passthrough a DVB card from the host. The version of tvheadend of this build is 3.9.2218 and it has not transcoding enabled. Transcoding will come when tvheadend fixes the deb build.
+I have not tested if it works to passthrough a DVB card from the host.
+
+The version of tvheadend of the latest build is 3.9.2345~f5c8e4ce.
+It's built from git and have transcoding and HDHomerun enabled.
+
