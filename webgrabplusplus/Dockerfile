@@ -54,3 +54,5 @@ RUN chmod +x /wg++/*.sh && \
 
 VOLUME /config \
        /data
+
+

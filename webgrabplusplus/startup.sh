@@ -22,3 +22,8 @@ fi
 if [ ! -d /config/rex ]; then
   cp -R /wg++/rex /config/
 fi
+
+#Check if user modified cron file exists and move to wg++.
+if [ -e /config/mycron ]; then
+  crontab /config/mycron
+fi
