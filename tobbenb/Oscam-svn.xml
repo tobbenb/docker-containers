@@ -5,7 +5,6 @@
 		http://www.streamboard.tv/oscam/[br]&#13;
 		[b][span style=\'color: #E80000;\']Directions:[/span][/b][br]&#13;
 		[b]/config[/b] : This is where Oscam will store it\'s configuration.[br][br]&#13;
-		[b]/data[/b] : This is where tv_grab_wg script in the Tvheadend container looks for the guide.xml file.[br][br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/tobbenb/oscam-svn/</Registry>
   <Repository>tobbenb/oscam-svn</Repository>
@@ -29,12 +28,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/data/</HostDir>
-      <ContainerDir>/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/appdata/wg++/</HostDir>
+      <HostDir>/mnt/cache/appdata/oscam/</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
