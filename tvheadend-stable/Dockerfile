@@ -18,6 +18,7 @@ RUN usermod -u 99 nobody && \
 RUN curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add - && \
     apt-add-repository http://apt.tvheadend.org/stable && \
     apt-get update -qq && \
+    apt-get install -qy debconf-utils && \
     echo "tvheadend tvheadend/admin_username select admin" | /usr/bin/debconf-set-selections && \
     echo "tvheadend tvheadend/admin_password select password" | /usr/bin/debconf-set-selections && \
     apt-get install -qy tvheadend
