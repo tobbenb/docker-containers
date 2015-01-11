@@ -7,7 +7,7 @@
 		[b]/config[/b] : This is where Oscam will store it\'s configuration.[br][br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/tobbenb/oscam/</Registry>
-  <Repository>tobbenb/oscam</Repository>
+  <Repository>tobbenb/oscam:v0.0.1</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
