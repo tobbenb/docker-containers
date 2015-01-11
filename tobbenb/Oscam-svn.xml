@@ -25,7 +25,7 @@
         <ContainerPort>10000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-    <Publish/>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
