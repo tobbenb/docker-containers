@@ -33,6 +33,6 @@ VOLUME /config \
 
 #Start tvheadend when container starts
 RUN mkdir -p /etc/service/tvheadend
-ADD tvheadend /etc/tvheadend/run
-RUN chmod +x /etc/tvheadend/run
+ADD tvheadend /etc/service/tvheadend/run
+RUN chmod +x /etc/service/tvheadend/run
 #Test
