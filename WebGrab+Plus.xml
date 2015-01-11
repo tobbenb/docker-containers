@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>WebGrab+Plus</Name>
+  <Description>WebGrab+Plus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.[br]&#13;
+		Optional postprocessors to add IMDb data or to customize your xmltv listing.[br]&#13;
+		http://www.webgrabplus.com/[br]&#13;
+		[b][span style=\'color: #E80000;\']Directions:[/span][/b][br]&#13;
+		[b]/config[/b] : This is where WebGrab+Plus will store it\'s configuration.[br][br]&#13;
+		[b]/data[/b] : This is where tv_grab_wg script in the Tvheadend container looks for the guide.xml file.[br][br]&#13;
+</Description>
+  <Registry>https://registry.hub.docker.com/u/tobbenb/wg++/</Registry>
+  <Repository>tobbenb/wg++</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/data/</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/wg++/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Version></Version>
+  <WebUI></WebUI>
+  <Banner></Banner>
+  <Icon>http://i.imgur.com/zrCJxzX.png</Icon>
+</Container>
