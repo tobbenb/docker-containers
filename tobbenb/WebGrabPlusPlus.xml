@@ -9,7 +9,7 @@
 		[b]/data[/b] : This is where tv_grab_wg script in the Tvheadend container looks for the guide.xml file.[br][br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/tobbenb/webgrabplusplus/</Registry>
-  <Repository>tobbenb/webgrabplusplus:v0.0.1</Repository>
+  <Repository>tobbenb/webgrabplusplus</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
