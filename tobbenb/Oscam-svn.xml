@@ -6,8 +6,8 @@
 		[b][span style=\'color: #E80000;\']Directions:[/span][/b][br]&#13;
 		[b]/config[/b] : This is where Oscam will store it\'s configuration.[br][br]&#13;
 </Description>
-  <Registry>https://registry.hub.docker.com/u/tobbenb/oscam-svn/</Registry>
-  <Repository>tobbenb/oscam-svn</Repository>
+  <Registry>https://registry.hub.docker.com/u/tobbenb/oscam/</Registry>
+  <Repository>tobbenb/oscam</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
