@@ -14,17 +14,14 @@ CMD ["/sbin/my_init"]
 #Change uid & gid to match Unraid
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody
+    usermod -g 44 nobody
 
 RUN curl http://apt.tvheadend.org/repo.gpg.key | sudo apt-key add - && \
     apt-add-repository http://apt.tvheadend.org/stable && \
-    apt-get update -qq && \
-    apt-get install -qy debconf-utils && \
-    echo "tvheadend tvheadend/admin_username select admin" | /usr/bin/debconf-set-selections && \
-    echo "tvheadend tvheadend/admin_password select password" | /usr/bin/debconf-set-selections && \
-    apt-get install -qy tvheadend
+    apt-get update -qq && apt-get install -qy \
+    tvheadend && \
+	apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 EXPOSE 9981 9982
 
@@ -35,4 +32,4 @@ VOLUME /config \
 RUN mkdir -p /etc/service/tvheadend
 ADD tvheadend /etc/service/tvheadend/run
 RUN chmod +x /etc/service/tvheadend/run
-#Test
+
