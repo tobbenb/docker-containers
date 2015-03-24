@@ -33,8 +33,9 @@ if [ -e /config/mycron ]; then
   crontab -u nobody /config/mycron
 fi
 
-#Change owner for config files
+#Change owner for config files and guide.xml
 chown -R nobody:users /config
+chown -R nobody:users /data
 
 #Start an update on container start if config file exist
 if [ -f /config/WebGrab++.config.xml ]; then
