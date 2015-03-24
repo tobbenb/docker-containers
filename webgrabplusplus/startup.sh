@@ -4,6 +4,7 @@ if [ ! -f /config/wget.exe ]; then
   cp /wg++/wget.exe /config/
   cp /wg++/wget.bat /config/
 fi
+
 #Check if Webgrab++ config file exists in config folder. Copy to config if not existing.
 if [ ! -f /config/WebGrab++.config.xml ]; then
   cp /wg++/WebGrab++.config.xml /config/
