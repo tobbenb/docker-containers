@@ -1,8 +1,9 @@
 #!/bin/sh
-#Create links for wget so grabbing works.
-ln -sf /wg++/wget.exe /config/wget.exe
-ln -sf /wg++/wget.bat /config/wget.bat
-
+#Copy wget so grabbing works.
+if [ ! -f /config/wget.exe ]; then
+  cp /wg++/wget.exe /config/
+  cp /wg++/wget.bat /config/
+fi
 #Check if Webgrab++ config file exists in config folder. Copy to config if not existing.
 if [ ! -f /config/WebGrab++.config.xml ]; then
   cp /wg++/WebGrab++.config.xml /config/
