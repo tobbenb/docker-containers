@@ -44,10 +44,9 @@ RUN wget -O /tmp/ini.zip http://webgrabplus.com/sites/default/files/download/ini
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 #Add scripts for crontab and config
-ADD update.sh startup.sh mycron /wg++/
-RUN chmod +x /wg++/*.sh && \
-    chmod +x /wg++/mycron && \
-    crontab /wg++/mycron && \
+ADD update.sh startup.sh mycron WebGrab++.config.xml se.timefor.tv.ini /wg++/
+RUN chmod -R +x /wg++/ && \
+    crontab -u nobody /wg++/mycron && \
     mkdir -p /etc/my_init.d && \
     mv /wg++/startup.sh /etc/my_init.d/
 
