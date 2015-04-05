@@ -29,7 +29,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/oscam/</HostDir>
+      <HostDir>/mnt/cache/appdata/oscam-test/</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
