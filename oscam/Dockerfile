@@ -14,15 +14,15 @@ CMD ["/sbin/my_init"]
 #Change uid & gid to match Unraid
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody && \
-	addgroup --gid 16 creader && \
-	usermod -g 16 nobody && \
+    addgroup --gid 16 creader && \
+    usermod -g 16 nobody && \
     usermod -d /home nobody && \
     chown -R nobody:users /home
 
 RUN apt-get update -qq && \
     apt-get install -qy \
-	libpcsclite1 \
-	pcscd pcsc-tools \
+    libpcsclite1 \
+    pcscd pcsc-tools \
     usbutils && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
  
