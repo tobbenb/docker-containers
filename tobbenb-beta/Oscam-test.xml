@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Name>Oscam-test</Name>
+  <Overview>This is a test build with my own compiled oscam binary with support for libusb and pcsc[br]&#13;
+  	    Oscam is a card server and client for decoding DVB streams over DVB-S, DVB-C, DVB-T or IPTV using a subscription card.</Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=37671.0</Support>
   <Description>This is a test build with my own compiled oscam binary with support for libusb and pcsc[br]&#13;
 		Oscam is a card server and client for decoding DVB streams over DVB-S, DVB-C, DVB-T or IPTV.[br]&#13;
 		http://www.streamboard.tv/oscam/[br]&#13;
