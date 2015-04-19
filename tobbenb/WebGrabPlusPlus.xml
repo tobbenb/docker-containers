@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Name>WebGrabPlusPlus</Name>
+  <Overview>WebGrab+Plus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.[br]&#13;
+		Optional postprocessors to add IMDb data or to customize your xmltv listing.[br]&#13;
+		http://www.webgrabplus.com/[br]&#13;</Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=37671.0</Support>
   <Description>WebGrab+Plus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.[br]&#13;
 		Optional postprocessors to add IMDb data or to customize your xmltv listing.[br]&#13;
 		http://www.webgrabplus.com/[br]&#13;
