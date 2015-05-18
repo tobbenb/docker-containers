@@ -5,7 +5,11 @@ Docker container for tvheadend unstable build. This is work in progress and it m
 
 To run this docker use this command:
 
-docker run -d –name=tvheadend -v /path/to/your/config:/config -v /path/to/your/recordings:/recordings -v /etc/localtime:/etc/localtime:ro -p 9981:9981 -p 9982:9982 tobbenb/tvheadend-unstable
+docker run -d –-name="tvheadend" -v /path/to/your/config:/config \
+		   -v /path/to/your/recordings:/recordings \
+		   -v /etc/localtime:/etc/localtime:ro \
+		   -p 9981:9981 -p 9982:9982 \
+		   tobbenb/tvheadend-unstable
 
 If you use IPTV or other IP based reception you have to add the ports to the start command. So if you have IPTV over udp that uses port 5500 you simply add this: -p 5500:5500
 
@@ -13,6 +17,6 @@ If you do not know which ports to passthrough you can add –net=“host” afte
 
 I have not tested if it works to passthrough a DVB card from the host.
 
-The version of tvheadend of the latest build is 3.9.2345~f5c8e4ce.
+The version of tvheadend of the latest build is 4.1.4~ge3d7e3c.
 It's built from git and have transcoding and HDHomerun enabled.
 

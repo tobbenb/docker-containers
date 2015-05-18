@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:0.9.16
 MAINTAINER tobbenb <torbjornbrekke@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -19,11 +19,9 @@ RUN usermod -u 99 nobody && \
 RUN apt-get update -qq && \
 apt-get install -qy build-essential pkg-config libssl-dev git bzip2 wget libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python liburiparser1 liburiparser-dev \
 libhdhomerun-dev && \
-cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && git checkout f5c8e4ce && ./configure --enable-libffmpeg_static && make && make install && \
-rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git
+cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && git checkout e3d7e3c2 && ./configure --enable-libffmpeg_static && make && make install && \
+rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 EXPOSE 9981 9982
 
@@ -39,3 +37,6 @@ RUN chmod +x /usr/bin/tv_grab_wg
 RUN mkdir -p /etc/service/tvheadend
 ADD tvheadend /etc/service/tvheadend/run
 RUN chmod +x /etc/service/tvheadend/run
+
+#Add ffmpeg to /usr/bin/
+ADD ffmpeg.gz /usr/bin/
