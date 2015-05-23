@@ -41,4 +41,6 @@
   <WebUI>http://[IP]:[PORT:8888]</WebUI>
   <Banner></Banner>
   <Icon>http://i.imgur.com/8LadrLg.png?1</Icon>
+  <Beta>True</Beta>
+  <Category>MediaServer:Other</Category>
 </Container>

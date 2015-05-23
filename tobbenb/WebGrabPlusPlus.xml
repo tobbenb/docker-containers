@@ -37,4 +37,6 @@
   <WebUI></WebUI>
   <Banner></Banner>
   <Icon>http://i.imgur.com/zrCJxzX.png</Icon>
+  <Beta>False</Beta>
+  <Category>Downloaders:</Category>
 </Container>
