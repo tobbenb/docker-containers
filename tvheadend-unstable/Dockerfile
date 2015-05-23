@@ -19,7 +19,7 @@ RUN usermod -u 99 nobody && \
 RUN apt-get update -qq && \
 apt-get install -qy build-essential pkg-config libssl-dev git bzip2 wget libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python liburiparser1 liburiparser-dev \
 libhdhomerun-dev && \
-cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && git checkout e3d7e3c2 && ./configure --enable-libffmpeg_static && make && make install && \
+cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && git checkout ef5b43a3 && ./configure --enable-libffmpeg_static && make && make install && \
 rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
@@ -30,8 +30,8 @@ VOLUME /config \
 	   /data
 
 # Add tv_grab_wg to /usr/bin/
-ADD tv_grab_wg /usr/bin/
-RUN chmod +x /usr/bin/tv_grab_wg
+ADD tv_grab_wg tv_grab_file /usr/bin/
+RUN chmod +x /usr/bin/tv_grab_*
 
 #Start tvheadend when container starts
 RUN mkdir -p /etc/service/tvheadend
