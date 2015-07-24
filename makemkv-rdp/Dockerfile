@@ -8,8 +8,9 @@ ENV GROUP_ID=100
 
 # Gui App Name
 ENV APP_NAME MakeMKV
+ENV TERM xterm
 
-# Default resolution, change if you like
+# Default resolution
 ENV WIDTH=1280
 ENV HEIGHT=720
 
