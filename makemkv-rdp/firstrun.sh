@@ -8,4 +8,4 @@ chmod -R g+rw /config
 
 #Add nobody to cdrom group
 addgroup --gid 19 makemkv
-usermod -g 19 nobody
+usermod -a -G 19 nobody
