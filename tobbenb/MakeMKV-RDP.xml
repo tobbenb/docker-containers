@@ -6,6 +6,8 @@
 	<Changes>[center][font size=5]MakeMKV-RDP Change Log[/font][/center][br]
 			 [font size=4]2015.07.24[/font][br]
 			 - Initial Release
+			 [font size=4]2015.07.24a[/font][br]
+			 - Changed the nobody user back to primary group "users".
 	</Changes>
 	<Category>Tools:</Category>
 	<Support>http://lime-technology.com/forum/index.php?topic=41744.0</Support>
