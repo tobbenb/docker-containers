@@ -8,7 +8,7 @@
 			 - Initial Release
 	</Changes>
 	<Category>Tools:</Category>
-	<Support></Support>
+	<Support>http://lime-technology.com/forum/index.php?topic=41744.0</Support>
 	<Description>MakeMKV is a tool for ripping Blu-ray and DVDs. This container is based on Hurricanes dockergui container with both rdp support and webgui.[br]
 				Fill in the rdp and webgui ports you want in the Port section. Remember to NOT change the containerport![br]
 				You can change the resolution in the Environment section to whatever you want.[br]
