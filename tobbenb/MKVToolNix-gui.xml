@@ -8,7 +8,7 @@
 			 - Initial Release
 	</Changes>
 	<Category>MediaApp:Video Tools:</Category>
-	<Support></Support>
+	<Support>http://lime-technology.com/forum/index.php?topic=41775.0</Support>
 	<Description>MKVToolNix is a set of tools to create, alter and inspect Matroska files under Linux, other Unices and Windows.[br]
 				Fill in the rdp and webgui ports you want in the Port section. Remember to NOT change the containerport![br]
 				You can change the resolution in the Environment section to whatever you want. Add WIDTH and HEIGHT in the Environment Variables.[br]
