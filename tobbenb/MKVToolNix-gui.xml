@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>MKVToolNix-gui</Name>
+  <Beta>False</Beta>
+  <Project>https://www.bunkus.org/videotools/mkvtoolnix/</Project>
+	<Changes>[center][font size=5]MKVToolNix-gui Change Log[/font][/center][br]
+			 [font size=4]2015.07.26[/font][br]
+			 - Initial Release
+	</Changes>
+	<Category>MediaApp:Video Tools:</Category>
+	<Support></Support>
+	<Description>MKVToolNix is a set of tools to create, alter and inspect Matroska files under Linux, other Unices and Windows.[br]
+				Fill in the rdp and webgui ports you want in the Port section. Remember to NOT change the containerport![br]
+				You can change the resolution in the Environment section to whatever you want. Add WIDTH and HEIGHT in the Environment Variables.[br]
+				Default is WIDTH 1600, HEIGHT 1050.[br]
+				I do nut use this program myself, so for help regarding the use of it, google is your friend.
+	</Description>
+  <Overview>MKVToolNix is a set of tools to create, alter and inspect Matroska files under Linux, other Unices and Windows.</Overview>
+  <Date>2015-07-26</Date>
+  <Registry>https://registry.hub.docker.com/u/tobbenb/mkvtoolnix-gui</Registry>
+  <Repository>tobbenb/mkvtoolnix-gui</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name></Name>
+      <Value></Value>
+    </Variable>
+    <Variable>
+      <Name></Name>
+      <Value></Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>3389</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort></HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/unRaid</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Version></Version>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Banner></Banner>
+  <Icon>http://i.imgur.com/JNAwFKU.png</Icon>
+  <ExtraParams></ExtraParams>
+</Container>
