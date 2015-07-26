@@ -4,8 +4,10 @@
   <Beta>False</Beta>
   <Project>https://www.bunkus.org/videotools/mkvtoolnix/</Project>
 	<Changes>[center][font size=5]MKVToolNix-gui Change Log[/font][/center][br]
-			 [font size=4]2015.07.26[/font][br]
+			 [font size=3]2015.07.26[/font][br]
 			 - Initial Release
+			 [font size=3]2015.07.26a[/font][br]
+			 - Fixed permissions on written files
 	</Changes>
 	<Category>MediaApp:Video Tools:</Category>
 	<Support>http://lime-technology.com/forum/index.php?topic=41775.0</Support>
