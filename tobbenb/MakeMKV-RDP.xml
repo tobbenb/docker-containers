@@ -7,7 +7,9 @@
 			 [font size=4]2015.07.24[/font][br]
 			 - Initial Release
 			 [font size=4]2015.07.24a[/font][br]
-			 - Changed the nobody user back to primary group "users".
+			 - Changed the nobody user back to primary group "users".[br]
+			 [font size=4]2015.07.26[/font][br]
+			 - Fixed permissions on written files
 	</Changes>
 	<Category>MediaApp:Video Tools:</Category>
 	<Support>http://lime-technology.com/forum/index.php?topic=41744.0</Support>
@@ -19,7 +21,7 @@
 				If you have more than one device and want to rip from both you will need to use two containers.
 	</Description>
   <Overview>MakeMKV is a tool for ripping Blu-ray and DVDs. This container is based on Hurricanes dockergui container with both rdp support and webgui.</Overview>
-  <Date>2015-07-24</Date>
+  <Date>2015-07-26</Date>
   <Registry>https://registry.hub.docker.com/u/tobbenb/makemkv-rdp</Registry>
   <Repository>tobbenb/makemkv-rdp</Repository>
   <BindTime>true</BindTime>
