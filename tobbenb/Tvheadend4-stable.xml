@@ -20,7 +20,7 @@ In recent version, the pipe:// source (in IPTV network) might be used to obtain 
 		[b]/data[/b] : This is where the tv_grab_wg script will look for the guide.xml. This is only for use with WebGrab+Plus. Ignore if you do not use WebGrab+Plus for EPG data.[br][br]&#13;
 </Description>
   <Registry>https://registry.hub.docker.com/u/tobbenb/tvheadend/</Registry>
-  <Repository>tobbenb/tvheadend</Repository>
+  <Repository>tobbenb/tvheadend:4.0.5</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
