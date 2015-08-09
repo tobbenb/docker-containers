@@ -1,9 +1,6 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 MAINTAINER tobbenb <torbjornbrekke@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
-
-#Disable the SSH server
-RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Set correct environment variables.
 ENV HOME /root
@@ -20,10 +17,10 @@ RUN apt-get update -qq && \
 apt-get install -qy \
 build-essential pkg-config libssl-dev git bzip2 wget \
 libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
-liburiparser1 liburiparser-dev \
+liburiparser1 liburiparser-dev gettext \
 libhdhomerun-dev dvb-apps && \
 cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && \
-git checkout fb6b56ce && ./configure --enable-libffmpeg_static && make && make install && \
+git checkout d1def080 && ./configure --enable-libffmpeg_static && make && make install && \
 rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
