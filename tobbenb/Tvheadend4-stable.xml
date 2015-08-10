@@ -49,5 +49,4 @@ In recent version, the pipe:// source (in IPTV network) might be used to obtain 
   <WebUI>http://[IP]:[PORT:9981]/extjs.html?</WebUI>
   <Banner></Banner>
   <Icon>http://i.imgur.com/BOM9PHj.png</Icon>
-   <Category>MediaServer:Video</Category>
 </Container>
