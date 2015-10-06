@@ -6,6 +6,8 @@
   <Changes>[center][font size=5]Tvheadend 4 stable Change Log[/font][/center][br]
 			 [font size=3]2015.08.09[/font][br]
 			 - Initial Release
+			 [font size=3]2015.10.06[/font][br]
+			 - Updated to version 4.0.6.
 	</Changes>
 	<Category>MediaServer:Video</Category>
   <Overview>This is the stable branch of Tvheadend installed from the Tvheadend apt-repository. Version: 4.0.5
