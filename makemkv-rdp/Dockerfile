@@ -10,7 +10,7 @@ ENV GROUP_ID=100
 ENV APP_NAME MakeMKV
 ENV TERM xterm
 
-# Default resolution
+# Default resolution, change if you like
 ENV WIDTH=1280
 ENV HEIGHT=720
 
@@ -18,16 +18,12 @@ ENV HEIGHT=720
 CMD ["/sbin/my_init"]
 
 # Install MakeMKV
+ADD Makefile ask_eula.sh install.sh /tmp/
+RUN chmod +x /tmp/install.sh && /tmp/install.sh
 
-RUN apt-add-repository "deb http://ppa.launchpad.net/heyarje/makemkv-beta/ubuntu trusty main" && \
-	gpg --keyserver keyserver.ubuntu.com --recv-keys 19F7E55B && gpg --export --armor 19F7E55B | apt-key add - && \
-  apt-get update -qq && \
-  apt-get install -qy \
-	makemkv-bin makemkv-oss 
-
-# Add scripts to conatainer
+# Add scripts to container
 ADD startapp.sh /startapp.sh
-RUN	chmod +x /startapp.sh
+RUN chmod +x /startapp.sh
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
