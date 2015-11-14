@@ -2,11 +2,18 @@
 
 #Check if nonexistent folder exists and create if needed
 if [ ! -d /nonexistent ]; then
-  mkdir -p /nonexistent
+  mkdir -p /nonexistent/
 fi
   
-#Link to xmltv config folder
-mkdir -p /config/.xmltv
-ln -s /config/.xmltv /nonexistent/.xmltv
-chown -R nobody:users /config
-chmod -R g+rw /config
+#Check if xmltv folder exists
+if [ ! -d /config/.xmltv ]; then
+  mkdir -p /config/.xmltv
+fi
+
+#Check if link exists
+if [ ! -h /config/.xmltv ]; then
+  ln -s  /config/.xmltv /nonexistent/
+fi
+
+chown -R nobody:users /config/.xmltv
+chmod -R g+rw /config/.xmltv
