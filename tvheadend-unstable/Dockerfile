@@ -33,6 +33,8 @@ VOLUME /config \
 # Add tv_grab_wg to /usr/bin/
 ADD tv_grab_wg tv_grab_file /usr/bin/
 RUN chmod +x /usr/bin/tv_grab_*
+ADD startup.sh /etc/my_init.d/
+RUN chmod +x /etc/my_init.d/startup.sh
 
 #Start tvheadend when container starts
 RUN mkdir -p /etc/service/tvheadend
