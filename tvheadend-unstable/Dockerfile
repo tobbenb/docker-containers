@@ -18,7 +18,7 @@ apt-get install -qy \
 build-essential pkg-config libssl-dev git bzip2 wget \
 libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
 liburiparser1 liburiparser-dev gettext \
-libhdhomerun-dev dvb-apps && \
+libhdhomerun-dev dvb-apps xmltv-util && \
 cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && \
 git checkout 10ba670c && ./configure --enable-libffmpeg_static && make && make install && \
 rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
