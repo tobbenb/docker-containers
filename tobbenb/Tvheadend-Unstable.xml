@@ -14,6 +14,7 @@
 		[b]/data[/b] : This is where the tv_grab_wg script will look for the guide.xml. This is only for use with WebGrab+Plus. Ignore if you do not use WebGrab+Plus for EPG data.[br][br]&#13;
   </Description>
   <Support>http://lime-technology.com/forum/index.php?topic=37671.0</Support>
+  <Project>https://tvheadend.org/</Project>
   <Registry>https://registry.hub.docker.com/u/tobbenb/tvheadend-unstable/</Registry>
   <Repository>tobbenb/tvheadend-unstable</Repository>
   <BindTime>true</BindTime>
