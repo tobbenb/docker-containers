@@ -27,7 +27,7 @@ libsoap-lite-perl libterm-readkey-perl libtext-bidi-perl libtext-iconv-perl libw
 libwww-perl libxml-dom-perl libxml-libxml-perl libxml-libxslt-perl libxml-parser-perl libxml-twig-perl \
 libxml-writer-perl libxmltv-perl perl perl-modules libxml-treepp-perl liblingua-en-numbers-ordinate-perl && \
 cd /tmp && git clone https://github.com/tvheadend/tvheadend.git && cd tvheadend && \
-git checkout d301e315 && ./configure --enable-libffmpeg_static && make && make install && \
+git checkout 69751293 && ./configure --enable-libffmpeg_static && make && make install && \
 cd /tmp/xmltv-0.5.67 && /bin/echo -e "yes" | perl Makefile.PL && make && make test && make install && \
 rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
