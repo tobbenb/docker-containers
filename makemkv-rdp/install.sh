@@ -14,17 +14,18 @@ apt-get install -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-de
 #	Download sources and extract	#
 #									#
 #####################################
+VERSION="1.9.8"
 
 mkdir -p /tmp/sources
-wget -O /tmp/sources/makemkv-bin-1.9.7.tar.gz http://www.makemkv.com/download/makemkv-bin-1.9.7.tar.gz
-wget -O /tmp/sources/makemkv-oss-1.9.7.tar.gz http://www.makemkv.com/download/makemkv-oss-1.9.7.tar.gz
+wget -O /tmp/sources/makemkv-bin-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-bin-$VERSION.tar.gz
+wget -O /tmp/sources/makemkv-oss-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-oss-$VERSION.tar.gz
 wget -O /tmp/sources/ffmpeg-2.8.tar.bz2 https://ffmpeg.org/releases/ffmpeg-2.8.tar.bz2
 pushd /tmp/sources/
-tar xvzf /tmp/sources/makemkv-bin-1.9.7.tar.gz
-tar xvzf /tmp/sources/makemkv-oss-1.9.7.tar.gz
+tar xvzf /tmp/sources/makemkv-bin-$VERSION.tar.gz
+tar xvzf /tmp/sources/makemkv-oss-$VERSION.tar.gz
 tar xvjf /tmp/sources/ffmpeg-2.8.tar.bz2
-cp /tmp/ask_eula.sh /tmp/sources/makemkv-bin-1.9.7/src/ 
-cp /tmp/Makefile /tmp/sources/makemkv-bin-1.9.7/
+cp /tmp/ask_eula.sh /tmp/sources/makemkv-bin-$VERSION/src/ 
+cp /tmp/Makefile /tmp/sources/makemkv-bin-$VERSION/
 popd
 
 #####################################
@@ -39,14 +40,14 @@ make install
 popd
 
 #Makemkv-oss
-pushd /tmp/sources/makemkv-oss-1.9.7
+pushd /tmp/sources/makemkv-oss-$VERSION
 PKG_CONFIG_PATH=/tmp/ffmpeg/lib/pkgconfig ./configure
 make
 make install
 popd
 
 #Makemkv-bin
-pushd /tmp/sources/makemkv-bin-1.9.7
+pushd /tmp/sources/makemkv-bin-$VERSION
 make install
 popd
 
