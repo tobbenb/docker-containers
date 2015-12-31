@@ -1,18 +1,8 @@
 FROM hurricane/dockergui:x11rdp1.3
 MAINTAINER tobbenb <torbjornbrekke@gmail.com>
-# Set environment variables
 
 # User/Group Id gui app will be executed as
-ENV USER_ID=99
-ENV GROUP_ID=100
-
-# Gui App Name
-ENV APP_NAME MakeMKV
-ENV TERM xterm
-
-# Default resolution, change if you like
-ENV WIDTH=1280
-ENV HEIGHT=720
+ENV USER_ID="99" GROUP_ID="100" APP_NAME="MakeMKV" TERM="xterm" WIDTH="1280" HEIGHT="720"
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
