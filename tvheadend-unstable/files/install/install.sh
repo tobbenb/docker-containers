@@ -77,4 +77,4 @@ cp /tmp/install/ffmpeg /usr/bin/
 #									#
 #####################################
 
-#rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
