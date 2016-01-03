@@ -15,8 +15,5 @@ If you use IPTV or other IP based reception you have to add the ports to the sta
 
 If you do not know which ports to passthrough you can add –net=“host” after -d and remove all port passthrough -p 1234:1234
 
-I have not tested if it works to passthrough a DVB card from the host.
-
-The version of tvheadend of the latest build is 4.0.5.
 It's built from git and have transcoding and HDHomerun enabled.
 
