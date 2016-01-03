@@ -7,8 +7,7 @@ ENV HOME="/root" DEBIAN_FRONTEND="noninteractive"
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 ADD ./files/ /tmp/
-RUN chmod +x /tmp/install/install.sh && /tmp/install/install.sh 
-#&& rm -r /tmp/install
+RUN chmod +x /tmp/install/install.sh && /tmp/install/install.sh && rm -r /tmp/install
 
 EXPOSE 9981 9982
 
