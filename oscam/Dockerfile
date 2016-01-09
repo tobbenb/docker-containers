@@ -11,7 +11,7 @@ CMD ["/sbin/my_init"]
 ADD ./files/ /tmp/
 
 #Install application and remove install files after
-RUN chmod +x /tmp/install/install.sh && /tmp/install/install.sh && rm -r /tmp/install
+RUN chmod +x /tmp/install/install.sh && sleep 1 && /tmp/install/install.sh && rm -r /tmp/install
 
 EXPOSE 8888
 
