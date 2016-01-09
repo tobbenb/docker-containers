@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /wg++
-mono Webgrab+Plus.exe  "/config" 
+mono WebGrab+Plus.exe  "/config" 

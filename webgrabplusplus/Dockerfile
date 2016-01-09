@@ -32,12 +32,12 @@ RUN mkdir wg++ && \
     rm -R /wg++/exe
     
 #Download update
-RUN wget -O /tmp/update.zip http://webgrabplus.com/sites/default/files/download/sw/V1.1.1/upgrade/patchexe_54.zip && \
+RUN wget -O /tmp/update.zip http://webgrabplus.com/sites/default/files/patchexe_prebuild.zip && \
     unzip /tmp/update.zip -d /tmp/ && \
-    mv /tmp/Webgrab+Plus.exe /wg++/
+    mv /tmp/WebGrab+Plus.exe /wg++/
 
 #Download Siteini.pack
-RUN wget -O /tmp/ini.zip http://webgrabplus.com/sites/default/files/download/ini/SiteIni.Pack_2014.12.10_134509.zip && \
+RUN wget -O /tmp/ini.zip http://webgrabplus.com/sites/default/files/download/ini/SiteIni.Pack_2016.01.05_085448.zip && \
     unzip /tmp/ini.zip -d /wg++/ini/
 
 # Clean up APT when done.
