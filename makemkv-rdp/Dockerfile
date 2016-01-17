@@ -9,7 +9,7 @@ CMD ["/sbin/my_init"]
 
 # Install MakeMKV
 ADD Makefile ask_eula.sh install.sh /tmp/
-RUN chmod +x /tmp/install.sh && /tmp/install.sh
+RUN chmod +x /tmp/install.sh && sleep 1 && /tmp/install.sh
 
 # Add scripts to container
 ADD startapp.sh /startapp.sh
