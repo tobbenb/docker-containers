@@ -24,8 +24,6 @@ pushd /tmp/sources/
 tar xvzf /tmp/sources/makemkv-bin-$VERSION.tar.gz
 tar xvzf /tmp/sources/makemkv-oss-$VERSION.tar.gz
 tar xvjf /tmp/sources/ffmpeg-2.8.tar.bz2
-cp /tmp/install/ask_eula.sh /tmp/sources/makemkv-bin-$VERSION/src/ 
-cp /tmp/install/Makefile /tmp/sources/makemkv-bin-$VERSION/
 popd
 
 #####################################
@@ -48,7 +46,7 @@ popd
 
 #Makemkv-bin
 pushd /tmp/sources/makemkv-bin-$VERSION
-make install
+/bin/echo -e "yes" | make install
 popd
 
 
