@@ -11,5 +11,6 @@ CMD ["/sbin/my_init"]
 ADD ./files/ /tmp/
 RUN chmod +x /tmp/install/install.sh && sleep 1 && /tmp/install/install.sh && rm -r /tmp/install
 
+
 VOLUME ["/config"]
 EXPOSE 3389 8080
