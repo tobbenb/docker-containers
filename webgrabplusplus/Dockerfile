@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:0.9.18
 MAINTAINER tobbenb <torbjornbrekke@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
