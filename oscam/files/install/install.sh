@@ -39,12 +39,20 @@ popd
 #	Add init scripts				#
 #									#
 #####################################
+
 mkdir -p /etc/service/oscam
 cat <<'EOT' > /etc/service/oscam/run
 #!/bin/bash
 exec /sbin/setuser nobody /usr/bin/oscam
 EOT
 chmod +x /etc/service/oscam/run
+
+mkdir -p /etc/service/pcscd
+cat <<'EOT' > /etc/service/pcscd/run
+#!/bin/bash
+exec /usr/sbin/pcscd
+EOT
+chmod +x /etc/service/pcscd/run
 
 #####################################
 #	Remove unneeded packages		#
