@@ -51,4 +51,4 @@ chmod +x /etc/service/oscam/run
 #									#
 #####################################
 
-apt-get purge -qq build-essential subversion && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/oscam-svn
+apt-get purge -qq build-essential subversion g++ g++-4.8 libapr1 libaprutil1 libserf-1-1 libstdc++-4.8-dev libsvn1 && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/oscam-svn
