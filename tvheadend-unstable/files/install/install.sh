@@ -35,7 +35,7 @@ pushd /tmp/
 git clone https://github.com/tvheadend/tvheadend.git 
 popd
 pushd /tmp/tvheadend
-git checkout eeabcd33 
+git checkout 9e66bb45 
 ./configure --enable-libffmpeg_static 
 make 
 make install
