@@ -14,7 +14,7 @@ usermod -g 100 nobody
 
 apt-get update -qq
 apt-get install -qy --no-install-recommends \
-				build-essential pkg-config libssl-dev git bzip2 wget \
+				build-essential pkg-config libssl-dev git bzip2 wget cmake\
 				libavahi-client-dev zlib1g-dev libcurl4-gnutls-dev python \
 				liburiparser1 liburiparser-dev gettext \
 				libhdhomerun-dev dvb-apps \
@@ -77,4 +77,4 @@ cp /tmp/install/ffmpeg /usr/bin/
 #									#
 #####################################
 
-rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+rm -r /tmp/tvheadend && apt-get purge -qq build-essential pkg-config git cmake && apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
