@@ -45,7 +45,7 @@
   <Version></Version>
   <WebUI>http://[IP]:[PORT:9981]/extjs.html?</WebUI>
   <Banner></Banner>
-  <Icon>http://http://i.imgur.com/zGSUAT4.png?1</Icon>
+  <Icon>http://i.imgur.com/zGSUAT4.png?1</Icon>
   <Beta>False</Beta>
   <Category>MediaServer:Video</Category>
   <ExtraParams>--device=/dev/dvb/</ExtraParams>
