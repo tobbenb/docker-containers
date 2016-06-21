@@ -52,7 +52,7 @@ cat <<'EOT' > /etc/service/pcscd/run
 #!/bin/bash
 rm /var/run/pcscd/pcscd.comm
 rm /var/run/pcscd/pcscd.pid
-exec /usr/sbin/pcscd
+exec /usr/sbin/pcscd -f > /dev/null 2>&1
 EOT
 chmod +x /etc/service/pcscd/run
 
