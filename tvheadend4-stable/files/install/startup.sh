@@ -17,6 +17,7 @@ fi
 
 #Add default recording path if no config exists
 if [ ! -d /config/dvr/config ]; then
+	echo Creating default DVR config...
 	mkdir -p /config/dvr/config
 	cp /7a5edfbe189851e5b1d1df19c93962f0 /config/dvr/config/7a5edfbe189851e5b1d1df19c93962f0
 fi

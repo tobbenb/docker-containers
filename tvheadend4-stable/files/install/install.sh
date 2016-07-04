@@ -35,7 +35,9 @@ pushd /tmp/
 git clone https://github.com/tvheadend/tvheadend.git 
 popd
 pushd /tmp/tvheadend
-git checkout dc6bd3a3 
+git checkout dc6bd3a3
+#Fix for x264 snapshot offline.
+cp /tmp/install/Makefile.ffmpeg /tmp/tvheadend/Makefile.ffmpeg 
 ./configure --enable-libffmpeg_static 
 make 
 make install
@@ -72,6 +74,7 @@ chmod +x /etc/service/tvheadend/run
 gunzip -v /tmp/install/ffmpeg.gz
 cp /tmp/install/ffmpeg /usr/bin/
 cp /tmp/install/7a5edfbe189851e5b1d1df19c93962f0 /7a5edfbe189851e5b1d1df19c93962f0
+chmod +x /7a5edfbe189851e5b1d1df19c93962f0
 
 
 
