@@ -71,6 +71,8 @@ chmod +x /etc/service/tvheadend/run
 
 gunzip -v /tmp/install/ffmpeg.gz
 cp /tmp/install/ffmpeg /usr/bin/
+cp /tmp/install/7a5edfbe189851e5b1d1df19c93962f0 /7a5edfbe189851e5b1d1df19c93962f0
+chmod +x /7a5edfbe189851e5b1d1df19c93962f0
 
 #####################################
 #	Remove unneeded packages		#
