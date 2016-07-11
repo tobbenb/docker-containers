@@ -36,7 +36,7 @@ git clone https://github.com/tvheadend/tvheadend.git
 popd
 pushd /tmp/tvheadend
 git checkout f34fac1a 
-./configure --enable-libffmpeg_static 
+./configure --enable-libffmpeg_static --enable-dvbcsa
 make 
 make install
 popd
