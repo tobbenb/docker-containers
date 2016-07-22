@@ -11,6 +11,6 @@ addgroup --gid 19 makemkv
 usermod -a -G 19 nobody
 
 #Remove Lock file if it exists.
-if [ ! -f /tmp/.X1-lock]; then
+if [ -f /tmp/.X1-lock]; then
   rm /tmp/.X1-lock
 fi
