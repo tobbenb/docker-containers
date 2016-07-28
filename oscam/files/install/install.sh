@@ -57,6 +57,15 @@ EOT
 chmod +x /etc/service/pcscd/run
 
 #####################################
+#	Install PCSC drivers for    #
+#	OmniKey devices		    #
+#####################################
+cd /tmp/install && tar xvzf ifdokccid_linux_x86_64-v4.2.8.tar.gz
+pushd /tmp/install/ifdokccid_linux_x86_64-v4.2.8
+./install
+popd
+
+#####################################
 #	Remove unneeded packages		#
 #									#
 #####################################
