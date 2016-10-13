@@ -34,12 +34,12 @@ RUN mkdir wg++ && \
 #Download update
 RUN wget -O /tmp/update.zip http://webgrabplus.com/sites/default/files/download/sw/V1.1.1/upgrade/patchexe_57.zip && \
     unzip /tmp/update.zip -d /tmp/ && \
-    mv /tmp/WebGrab+Plus.exe /wg++/
+    mv /tmp/WebGrab+Plus.exe /wg++/ && \
+    mv /tmp/xmltv.dll /wg++/
 
 #Download Siteini.pack
 RUN wget -O /tmp/ini.zip http://webgrabplus.com/sites/default/files/download/ini/SiteIni.Pack_2016.01.05_085448.zip && \
-    unzip /tmp/ini.zip -d /wg++/ini/ && \
-    mv /tmp/update/xmltv.dll /wg++/
+    unzip /tmp/ini.zip -d /wg++/ini/
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
