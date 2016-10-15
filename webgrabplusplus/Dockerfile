@@ -18,7 +18,7 @@ RUN usermod -u 99 nobody && \
 
 RUN apt-add-repository multiverse && \
     apt-get update -qq && \
-    apt-get install -qy mono-complete unrar unzip wget
+    apt-get install -qy mono-complete sudo unrar unzip wget
 
 #Download and extract WG++ to correct paths
 RUN mkdir wg++ && \
