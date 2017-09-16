@@ -14,7 +14,7 @@ apt-get install -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-de
 #	Download sources and extract	#
 #									#
 #####################################
-VERSION="1.10.6"
+VERSION="1.10.7"
 
 mkdir -p /tmp/sources
 wget -O /tmp/sources/makemkv-bin-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-bin-$VERSION.tar.gz
