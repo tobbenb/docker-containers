@@ -33,7 +33,8 @@ popd
 
 #FFmpeg
 pushd /tmp/sources/ffmpeg-3.4.1
-./configure --prefix=/tmp/ffmpeg --enable-static --disable-shared --enable-pic --disable-yasm
+#./configure --prefix=/tmp/ffmpeg --enable-static --disable-shared --enable-pic --disable-yasm
+./configure --prefix=/tmp/ffmpeg --enable-static --disable-shared --enable-pic --disable-yasm --disable-all --disable-autodetect --disable-everything --enable-swresample --enable-avcodec --enable-encoder=flac,aac --enable-decoders
 make install
 popd
 
