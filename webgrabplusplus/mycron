@@ -1,1 +1,0 @@
-02 02 * * * /wg++/update.sh 2>&1 | /usr/bin/logger -t WebGrab++
