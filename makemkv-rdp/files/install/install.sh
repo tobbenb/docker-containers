@@ -14,16 +14,17 @@ apt-get install -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-de
 #	Download sources and extract	#
 #									#
 #####################################
-VERSION="1.10.10"
+MKV_VERSION="1.10.10"
+FFMPEG_VER="3.4.1"
 
 mkdir -p /tmp/sources
-wget -O /tmp/sources/makemkv-bin-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-bin-$VERSION.tar.gz
-wget -O /tmp/sources/makemkv-oss-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-oss-$VERSION.tar.gz
-wget -O /tmp/sources/ffmpeg-2.8.tar.bz2 https://ffmpeg.org/releases/ffmpeg-2.8.tar.bz2
+wget -O /tmp/sources/makemkv-bin-$MKV_VERSION.tar.gz http://www.makemkv.com/download/makemkv-bin-$MKV_VERSION.tar.gz
+wget -O /tmp/sources/makemkv-oss-$MKV_VERSION.tar.gz http://www.makemkv.com/download/makemkv-oss-$MKV_VERSION.tar.gz
+wget -O /tmp/sources/ffmpeg-$FFMPEG_VER.tar.bz2 https://ffmpeg.org/releases/ffmpeg-$FFMPEG_VER.tar.bz2
 pushd /tmp/sources/
-tar xvzf /tmp/sources/makemkv-bin-$VERSION.tar.gz
-tar xvzf /tmp/sources/makemkv-oss-$VERSION.tar.gz
-tar xvjf /tmp/sources/ffmpeg-2.8.tar.bz2
+tar xvzf /tmp/sources/makemkv-bin-$MKV_VERSION.tar.gz
+tar xvzf /tmp/sources/makemkv-oss-$MKV_VERSION.tar.gz
+tar xvjf /tmp/sources/ffmpeg-$FFMPEG_VER.tar.bz2
 popd
 
 #####################################
@@ -32,20 +33,21 @@ popd
 #####################################
 
 #FFmpeg
-pushd /tmp/sources/ffmpeg-2.8
+pushd /tmp/sources/ffmpeg-$FFMPEG_VER
 ./configure --prefix=/tmp/ffmpeg --enable-static --disable-shared --enable-pic --disable-yasm
 make install
 popd
 
 #Makemkv-oss
-pushd /tmp/sources/makemkv-oss-$VERSION
+cp /tmp/install/driveio.h /tmp/sources/makemkv-oss-$MKV_VERSION/libdriveio/inc/driveio/driveio.h
+pushd /tmp/sources/makemkv-oss-$MKV_VERSION
 PKG_CONFIG_PATH=/tmp/ffmpeg/lib/pkgconfig ./configure
 make
 make install
 popd
 
 #Makemkv-bin
-pushd /tmp/sources/makemkv-bin-$VERSION
+pushd /tmp/sources/makemkv-bin-$MKV_VERSION
 /bin/echo -e "yes" | make install
 popd
 
