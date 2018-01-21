@@ -17,8 +17,8 @@ apt-get install -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-de
 VERSION="1.10.8"
 
 mkdir -p /tmp/sources
-wget -O /tmp/sources/makemkv-bin-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-bin-$VERSION.tar.gz
-wget -O /tmp/sources/makemkv-oss-$VERSION.tar.gz http://www.makemkv.com/download/makemkv-oss-$VERSION.tar.gz
+wget -O /tmp/sources/makemkv-bin-$VERSION.tar.gz http://www.makemkv.com/download/old/makemkv-bin-$VERSION.tar.gz
+wget -O /tmp/sources/makemkv-oss-$VERSION.tar.gz http://www.makemkv.com/download/old/makemkv-oss-$VERSION.tar.gz
 wget -O /tmp/sources/ffmpeg-3.4.1.tar.bz2 https://ffmpeg.org/releases/ffmpeg-3.4.1.tar.bz2
 pushd /tmp/sources/
 tar xvzf /tmp/sources/makemkv-bin-$VERSION.tar.gz
