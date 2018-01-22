@@ -20,7 +20,8 @@
 				Fill in the rdp and webgui ports you want in the Port section. Remember to NOT change the containerport![br]
 				You can change the resolution in the Environment section to whatever you want.[br]
 				Remember to change to the /unRaid folder in the settings of MakeMKV as the default location of saving MKVs. If you forget this you will fill up your docker.img![br]
-				You have to find out which of your /dev/sg* device is the DVD/BD-ROM. Then add the correct one in the Extra Paramters section with --device=/dev/sg*. Replace * with the actual number.[br]
+				You have to find out which of your /dev/sg* device is the DVD/BD-ROM. The correct device will belong to the cdrom group. [br]
+				Then add the correct one in the Extra Paramters section with --device=/dev/sg*. Replace * with the actual number.[br]
 				If you have more than one device and want to rip from both you will need to use two containers.
 	</Description>
   <Overview>MakeMKV is a tool for ripping Blu-ray and DVDs. This container is based on Hurricanes dockergui container with both rdp support and webgui.</Overview>
