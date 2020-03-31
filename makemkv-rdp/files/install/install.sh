@@ -1,10 +1,11 @@
 #!/bin/bash
 #Install script for applications
 #MakeMKV-RDP
+export DEBIAN_FRONTEND=noninteractive
 
 #####################################
-#	Install dependencies			        #
-#									                  #
+#	Install dependencies			#
+#									#
 #####################################
 
 apt-get update -qq
@@ -21,8 +22,8 @@ apt-get install -qy \
         zlib1g-dev
 
 #####################################
-#	Download sources and extract	    #
-#									                  #
+#	Download sources and extract	#
+#									#
 #####################################
 VERSION="1.15.0"
 
@@ -34,11 +35,12 @@ pushd /tmp/sources/
 tar xvzf /tmp/sources/makemkv-bin-$VERSION.tar.gz
 tar xvzf /tmp/sources/makemkv-oss-$VERSION.tar.gz
 tar xvjf /tmp/sources/ffmpeg-2.8.tar.bz2
+mv /tmp/logic.cpp /tmp/sources/makemkv-oss-$VERSION/makemkvgui/src/logic.cpp
 popd
 
 #####################################
-#	Compile and install				        #
-#									                  #
+#	Compile and install				#
+#									#
 #####################################
 
 #FFmpeg
@@ -56,22 +58,22 @@ popd
 
 #Makemkv-bin
 pushd /tmp/sources/makemkv-bin-$VERSION
-make
+/bin/echo -e "yes" | make
 /bin/echo -e "yes" | make install
 popd
 
 
 #####################################
-#	Fix keyboard mappings rdp		      #
-#									                  #
+#	Fix keyboard mappings rdp		#
+#									#
 #####################################
 sed -i.bak '/[default_rdp_layouts]/ a rdp_layout_no=0x00000414' /etc/xrdp/xrdp_keyboard.ini
 sed -i.bak '/[default_layouts_map]/ a rdp_layout_no=no' /etc/xrdp/xrdp_keyboard.ini
 cp /tmp/install/keymaps/*.ini /etc/xrdp/
 
 #####################################
-#	Add configs and needed stuff	    #
-#									                  #
+#	Add configs and needed stuff	#
+#									#
 #####################################
 cp /tmp/install/startapp.sh /startapp.sh
 chmod +x /startapp.sh
@@ -79,8 +81,8 @@ cp /tmp/install/firstrun.sh /etc/my_init.d/firstrun.sh
 chmod +x /etc/my_init.d/firstrun.sh
 
 #####################################
-#	Remove unneeded packages		      #
-#									                  #
+#	Remove unneeded packages		#
+#									#
 #####################################
 
 apt-get remove -qy \
@@ -95,8 +97,7 @@ apt-get remove -qy \
     zlib1g-dev
 apt-get clean && \
     rm -rf /var/lib/apt/lists/* \
-      /var/tmp/* \
-      /tmp
+      /var/tmp/*
 apt-get autoremove -qy
 
 exit
