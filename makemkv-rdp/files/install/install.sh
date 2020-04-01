@@ -3,26 +3,16 @@
 #MakeMKV-RDP
 
 #####################################
-#	Install dependencies			        #
-#									                  #
+#	Install dependencies			#
+#									#
 #####################################
 
 apt-get update -qq
-apt-get install -qy \
-        build-essential \
-        libc6-dev \
-        libssl-dev \
-        libexpat1-dev \
-        libavcodec-dev \
-        libgl1-mesa-dev \
-        pkg-config \
-        qtbase5-dev \
-        wget \
-        zlib1g-dev
+apt-get install -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev libqt4-dev wget
 
 #####################################
-#	Download sources and extract	    #
-#									                  #
+#	Download sources and extract	#
+#									#
 #####################################
 VERSION="1.15.0"
 
@@ -37,8 +27,8 @@ tar xvjf /tmp/sources/ffmpeg-2.8.tar.bz2
 popd
 
 #####################################
-#	Compile and install				        #
-#									                  #
+#	Compile and install				#
+#									#
 #####################################
 
 #FFmpeg
@@ -56,22 +46,21 @@ popd
 
 #Makemkv-bin
 pushd /tmp/sources/makemkv-bin-$VERSION
-make
 /bin/echo -e "yes" | make install
 popd
 
 
 #####################################
-#	Fix keyboard mappings rdp		      #
-#									                  #
+#	Fix keyboard mappings rdp		#
+#									#
 #####################################
 sed -i.bak '/[default_rdp_layouts]/ a rdp_layout_no=0x00000414' /etc/xrdp/xrdp_keyboard.ini
 sed -i.bak '/[default_layouts_map]/ a rdp_layout_no=no' /etc/xrdp/xrdp_keyboard.ini
 cp /tmp/install/keymaps/*.ini /etc/xrdp/
 
 #####################################
-#	Add configs and needed stuff	    #
-#									                  #
+#	Add configs and needed stuff	#
+#									#
 #####################################
 cp /tmp/install/startapp.sh /startapp.sh
 chmod +x /startapp.sh
@@ -79,24 +68,11 @@ cp /tmp/install/firstrun.sh /etc/my_init.d/firstrun.sh
 chmod +x /etc/my_init.d/firstrun.sh
 
 #####################################
-#	Remove unneeded packages		      #
-#									                  #
+#	Remove unneeded packages		#
+#									#
 #####################################
 
-apt-get remove -qy \
-    build-essential \
-    pkg-config \
-    libc6-dev \
-    libssl-dev \
-    libexpat1-dev \
-    libavcodec-dev \
-    libgl1-mesa-dev \
-    qtbase5-dev \
-    zlib1g-dev
-apt-get clean && \
-    rm -rf /var/lib/apt/lists/* \
-      /var/tmp/* \
-      /tmp
-apt-get autoremove -qy
+apt-get remove -qy build-essential pkg-config libc6-dev libssl-dev libexpat1-dev libavcodec-dev libgl1-mesa-dev libqt4-dev
+apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 exit
